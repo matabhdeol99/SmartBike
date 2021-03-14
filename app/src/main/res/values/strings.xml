@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Smart Bike</string>
+
+
+    <string-array name="country_arrays">
+        <item>Dropdown</item>
+        <item>Button</item>
+        <item>Buttton</item>
+    </string-array>
+
+</resources>
