@@ -7,9 +7,38 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:198631448349:android:02609c2c4e830c2abe4bf4",
+        "mobilesdk_app_id": "1:198631448349:android:59f8014cc09186f3be4bf4",
         "android_client_info": {
           "package_name": "com.codinginflow.smartbike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198631448349-rot2sdbvbe7k6c0pubnd19rctan32ufg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxWbPimOuVJ7tRYG7SxMei8Jhh1TmIHMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198631448349-rot2sdbvbe7k6c0pubnd19rctan32ufg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198631448349:android:f98279aadce50908be4bf4",
+        "android_client_info": {
+          "package_name": "com.journaldev.smartbike"
         }
       },
       "oauth_client": [

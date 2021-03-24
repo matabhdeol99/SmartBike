@@ -4,8 +4,9 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.journaldev.mdsportsnation"
+        applicationId "com.codinginflow.smartbike"
         minSdkVersion 16
+        multiDexEnabled true
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

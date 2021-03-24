@@ -30,20 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().setFormat(PixelFormat.UNKNOWN);
 
-        VideoView mVideoView2 = (VideoView)findViewById(R.id.videoView1);
-
-        String uriPath2 ="android.resource://com.journaldev.mdsportsnation/"+R.raw.arena;
-        Uri uri2 =Uri.parse(uriPath2);
-        mVideoView2.setVideoURI(uri2);
-        mVideoView2.requestFocus();
-        mVideoView2.start();
-
-        mVideoView2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
-            }
-        });
 
 
     }

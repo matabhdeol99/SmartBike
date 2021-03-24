@@ -10,14 +10,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.journaldev.smartbike.R;
 
+import android.os.Handler;
 import android.widget.Toast;
 
 
 public class Register extends AppCompatActivity  implements View.OnClickListener{
 
     Button btRegister;
-    EditText etName, etPhone, etEmail, etUsername, etPassword;
+    EditText etName, etEmail, etUsername, etPassword;
     TextView tvLoginLink;
 
     @Override
@@ -27,10 +29,9 @@ public class Register extends AppCompatActivity  implements View.OnClickListener
 
         etName = (EditText)findViewById(R.id.etName);
         etEmail = (EditText)findViewById(R.id.etEmail);
-        etPhone = (EditText)findViewById(R.id.etPhone);
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword = (EditText)findViewById(R.id.etPassword);
-        btRegister = (Button)findViewById(R.id.btSaveContact);
+        btRegister = (Button)findViewById(R.id.btRegister);
 
         final DatabaseHelper databaseHelper;
 
@@ -46,7 +47,6 @@ public class Register extends AppCompatActivity  implements View.OnClickListener
             public void onClick(View view) {
                 if (validate()) {
                     String UserName = etUsername.getText().toString();
-                    String Phone = etPhone.getText().toString();
                     String Email = etEmail.getText().toString();
                     String Password = etPassword.getText().toString();
 
@@ -55,7 +55,7 @@ public class Register extends AppCompatActivity  implements View.OnClickListener
                     if (!databaseHelper.isEmailExists(Email)) {
 
                         //Email does not exist now add new user to database
-                        databaseHelper.addUser(new User(null, UserName, Phone, Email, Password));
+                        databaseHelper.addUser(new User(null, UserName, Email, Password));
                         Snackbar.make(btRegister, "User created successfully! Please Login ", Snackbar.LENGTH_LONG).show();
 
 
@@ -76,7 +76,6 @@ public class Register extends AppCompatActivity  implements View.OnClickListener
 
         //Get values from EditText fields
         String UserName = etUsername.getText().toString();
-        String Phone = etPhone.getText().toString();
         String Email = etEmail.getText().toString();
         String Password = etPassword.getText().toString();
 
@@ -124,14 +123,14 @@ public class Register extends AppCompatActivity  implements View.OnClickListener
     public void onClick(View v) {
 
         switch(v.getId()){
-            case R.id.btSaveContact:
+            case R.id.btRegister:
 
-                startActivity(new Intent(this,Login.class));
+                startActivity(new Intent(this, com.journaldev.smartbike.Login.class));
                 break;
 
             case R.id.tvLoginLink:
 
-                startActivity(new Intent(this,Login.class));
+                startActivity(new Intent(this, com.journaldev.smartbike.Login.class));
                 break;
 
         }

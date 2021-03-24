@@ -1,9 +1,13 @@
 package com.journaldev.smartbike;
 
 import android.content.Context;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+
+
+import static com.journaldev.smartbike.DatabaseHelper.TABLE_USERS;
 
 public class DBManager {
 
@@ -28,8 +32,8 @@ public class DBManager {
 
 
     public Cursor fetch() {
-        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.USERNAME,DatabaseHelper.PHONE, DatabaseHelper.PASSWORD };
-        Cursor cursor = database.query(DatabaseHelper.TABLE_USERS, columns, null, null, null, null, null);
+        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.USERNAME, DatabaseHelper.PASSWORD };
+        Cursor cursor = database.query(TABLE_USERS, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

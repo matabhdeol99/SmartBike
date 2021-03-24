@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //DATABASE NAME
-    public static final String DATABASE_NAME = "MDSportsNation.com";
+    public static final String DATABASE_NAME = "SmartBike.com";
 
     //DATABASE VERSION
     public static final int DATABASE_VERSION = 1;
@@ -20,7 +20,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Table columns
     public static final String _ID = "_id";
     public static final String USERNAME = "userName";
-    public static final String PHONE = "phone";
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
 
@@ -38,11 +37,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_USERS + "(" + _ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USERNAME + " TEXT NOT NULL, " + PHONE + "TEXT," + EMAIL + " TEXT," + PASSWORD + " TEXT);";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + USERNAME + " TEXT NOT NULL, " + EMAIL + " TEXT," + PASSWORD + " TEXT);";
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-         }
+    }
 
 
 
@@ -53,7 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.db = db;
 
 
-
     }
 
     @Override
@@ -62,6 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
 
 
 
@@ -76,9 +75,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         //Put username in  @values
         values.put(USERNAME, user.userName);
-
-        //Put phone in  @values
-        values.put(PHONE, user.phone);
 
         //Put email in  @values
         values.put(EMAIL, user.email);
@@ -100,7 +96,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (cursor != null && cursor.moveToFirst() && cursor.getCount() > 0) {
             //if cursor has value then in user database there is user associated with this given email
-            User user1 = new User(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),cursor.getString(4));
+            User user1 = new User(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
 
             //Match both passwords check they are same or not
             if (user.password.equalsIgnoreCase(user1.password)) {

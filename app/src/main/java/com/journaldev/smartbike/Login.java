@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.journaldev.smartbike.DatabaseHelper;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,8 +43,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         Cursor cursor = dbManager.fetch();
 
-        etUsername = (EditText)findViewById(R.id.etPhoneS);
-        etPassword = (EditText)findViewById(R.id.etPhoneP);
+        etUsername = (EditText)findViewById(R.id.etUsername);
+        etPassword = (EditText)findViewById(R.id.etPassword);
         btLogin = (Button)findViewById(R.id.btLogin);
         tvRegisterLink = (TextView)findViewById(R.id.tvRegisterLink);
 
@@ -76,7 +77,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             valid = false;
             Toast toast = Toast.makeText(getApplicationContext(),"Please enter a password!", Toast.LENGTH_LONG);
             toast.show();
-            } else {
+        } else {
             if (Password.length() > 5) {
                 valid = true;
 
@@ -84,7 +85,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 valid = false;
                 Toast toast = Toast.makeText(getApplicationContext(),"Password is too short!", Toast.LENGTH_LONG);
                 toast.show();
-                }
+            }
         }
 
         return valid;
@@ -132,7 +133,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         String Password = etPassword.getText().toString();
 
                         //Authenticate user
-                        User currentUser = databaseHelper.Authenticate(new User(null, UserName1, null,null, Password));
+                        User currentUser = databaseHelper.Authenticate(new User(null, UserName1, null, Password));
 
                         //Check Authentication is successful or not
                         if (currentUser != null) {
