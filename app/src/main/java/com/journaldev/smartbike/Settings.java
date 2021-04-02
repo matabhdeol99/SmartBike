@@ -17,7 +17,7 @@ public class Settings extends AppCompatActivity {
 
     }
 
-    public void sendContsct(View view){
+    public void sendContact(View view){
         Intent intent = new Intent(this, EmergencyContact.class);
         startActivity(intent);
     }

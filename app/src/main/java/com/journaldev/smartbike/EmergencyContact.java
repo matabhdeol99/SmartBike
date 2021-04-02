@@ -50,7 +50,7 @@ public class EmergencyContact extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emergencyscreen);
+        setContentView(R.layout.activity_emergencycontact);
 
         etName = findViewById(R.id.etName);
         etPhoneP = findViewById(R.id.etPhoneP);

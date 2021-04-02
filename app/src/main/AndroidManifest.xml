@@ -20,6 +20,8 @@
         <activity android:name="com.journaldev.smartbike.CameraStorage"></activity>
         <activity android:name="com.journaldev.smartbike.DatabaseHelper"></activity>
         <activity android:name="com.journaldev.smartbike.DBManager"></activity>
+        <activity android:name="com.journaldev.smartbike.EmergencyContact"></activity>
+        <activity android:name="com.journaldev.smartbike.EmergencyScreen"></activity>
         <activity android:name="com.journaldev.smartbike.HomePage"></activity>
         <activity android:name="com.journaldev.smartbike.LightControls"></activity>
         <activity android:name="com.journaldev.smartbike.Maps"></activity>
